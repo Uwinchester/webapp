@@ -15,5 +15,10 @@ pipeline {
     sh 'mvn clean package'
    }
   }
+  stage ('Deploy') {
+   steps{
+    sh 'mv target/*.war /home/usef/Downloads/apache-tomcat-10.1.39/webapps/webapp.war
+   }
+  } 
  }
 }
