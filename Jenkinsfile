@@ -17,7 +17,7 @@ pipeline {
   }
   stage ('Deploy') {
    steps{
-    sh 'mv target/*.war /home/usef/Downloads/apache-tomcat-10.1.39/webapps/webapp.war
+    sh 'mv target/*.war /home/usef/Downloads/apache-tomcat-10.1.39/webapps/webapp.war'
    }
   } 
  }
