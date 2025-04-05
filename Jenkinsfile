@@ -12,7 +12,7 @@ pipeline {
   }
   stage ('secrets') {
    steps {
-    sh 'sudo docker -S run gesellix/trufflehog --json https://github.com/cehkunal/webapp.git > trufflehog.json'
+    sh 'docker run gesellix/trufflehog --json https://github.com/cehkunal/webapp.git > trufflehog.json'
     sh 'cat trufflehog.json'
    }
   }
