@@ -10,6 +10,13 @@ pipeline {
     sh 'echo "M2_HOME = ${M2_HOME}"'
    }
   }
+  stage ('secrets') {
+   steps {
+    sh 'rm trufflehog.json || true'
+    sh 'trufflehog --json https://github.com/cehkunal/webapp.git > trufflehog.json'
+    sh 'cat trufflehog.json'
+   }
+  }
   stage ('build') {
    steps {
     sh 'mvn clean package'
