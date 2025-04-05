@@ -12,7 +12,6 @@ pipeline {
   }
   stage ('secrets') {
    steps {
-    sh 'rm trufflehog.json || true'
     sh 'trufflehog --json https://github.com/cehkunal/webapp.git > trufflehog.json'
     sh 'cat trufflehog.json'
    }
